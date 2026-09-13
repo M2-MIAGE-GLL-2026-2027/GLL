@@ -10,21 +10,21 @@ public class Morpion {
             String ligne = null;
             switch (i) {
             case 0:
-                ligne = echiquier[0] + echiquier[1] + echiquier[2];
+                ligne = echiquier[0] + echiquier[1] + echiquier[2];break;
             case 1:
-                ligne = echiquier[3] + echiquier[4] + echiquier[5];
+                ligne = echiquier[3] + echiquier[4] + echiquier[5];break;
             case 2:
-                ligne = echiquier[6] + echiquier[7] + echiquier[8];
+                ligne = echiquier[6] + echiquier[7] + echiquier[8];break;
             case 3:
-                ligne = echiquier[0] + echiquier[3] + echiquier[6];
+                ligne = echiquier[0] + echiquier[3] + echiquier[6];break;
             case 4:
-                ligne = echiquier[1] + echiquier[4] + echiquier[7];
+                ligne = echiquier[1] + echiquier[4] + echiquier[7];break;
             case 5:
-                ligne = echiquier[2] + echiquier[5] + echiquier[8];
+                ligne = echiquier[2] + echiquier[5] + echiquier[8];break;
             case 6:
-                ligne = echiquier[0] + echiquier[4] + echiquier[8];
+                ligne = echiquier[0] + echiquier[4] + echiquier[8];break;
             case 7:
-                ligne = echiquier[2] + echiquier[4] + echiquier[6];
+                ligne = echiquier[2] + echiquier[4] + echiquier[6];break;
             }
             if (ligne.equals("XXX")) return "X";
             if (ligne.equals("OOO")) return "O";

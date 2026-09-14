@@ -6,4 +6,4 @@
 
 ## Contributors
 
-- Billy boy, SomeFakeName, this.is.fake@something.fr
+- Clément Soulier, Clement-soulier, clement.soulier12@gmail.com

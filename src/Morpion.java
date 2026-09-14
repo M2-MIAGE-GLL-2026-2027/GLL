@@ -81,16 +81,28 @@ public class Morpion {
             + " Placez " + symbol + " a la case:");
  
         while (winner == null) {
-            int chiffre = in.nextInt();
 
-            if (echiquier[chiffre - 1].equals(String.valueOf(chiffre))) {
-                echiquier[chiffre - 1] = symbol;
-                symbol = symbol.equals("X") ? "O" : "X"; 
-                affichEchiquier();
-                winner = evalGagnant();
+            String saisie = in.nextLine().trim();
+
+            try {
+                int chiffre = Integer.parseInt(saisie);
+
+                if(chiffre < 1 || chiffre > 9){
+                    System.out.println("Veuillez entrer un chiffre entre 1 et 9");
+                    continue;
+                }
+
+                if (echiquier[chiffre - 1].equals(String.valueOf(chiffre))) {
+                    echiquier[chiffre - 1] = symbol;
+                    symbol = symbol.equals("X") ? "O" : "X"; 
+                    affichEchiquier();
+                    winner = evalGagnant();
+                }
+                else
+                    System.out.println("Case deja prise, entrez un autre chiffre");
+            } catch (NumberFormatException e) {
+                System.out.println("Veuillez entrer un chiffre entre 1 et 9.");
             }
-            else
-                System.out.println("Case deja prise, entrez un autre chiffre");
         }
        
         if (winner.equals("egalite"))

@@ -7,3 +7,4 @@
 ## Contributors
 
 - Billy boy, SomeFakeName, this.is.fake@something.fr
+- Jérémie Pennec, JrmPennec, jeremie.pnc@gmail.com

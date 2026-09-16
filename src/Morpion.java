@@ -70,12 +70,21 @@ public class Morpion {
         String winner = null;
         Scanner in = new Scanner(System.in);
         echiquier = new String[9];
-        symbol = "X";
  
         for (int i = 0; i < 9; i++)
             echiquier[i] = String.valueOf(i + 1);
  
         System.out.println("Bienvenu au morpion.");
+
+        // Choix du symbole par le premier joueur
+        System.out.println("Joueur 1, choisissez votre symbole (X ou O) :");
+        String choix = in.next().trim().toUpperCase();
+        while (!choix.equals("X") && !choix.equals("O")) {
+            System.out.println("Choix invalide, tapez X ou O :");
+            choix = in.next().trim().toUpperCase();
+        }
+        symbol = choix;
+
         affichEchiquier();
         System.out.println("Joueur " + symbol + " commence."
             + " Placez " + symbol + " a la case:");

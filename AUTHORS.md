@@ -8,3 +8,4 @@
 
 - Clément Soulier, Clement-soulier, clement.soulier12@gmail.com
 - Jérémie Pennec, JrmPennec, jeremie.pnc@gmail.com
+- Romain Cabaret, RomainCabaret, romainc.cabaret@gmail.com

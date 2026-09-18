@@ -65,17 +65,29 @@ public class Morpion {
 		    + echiquier[7] + " | " + echiquier[8] + " |");
         System.out.println("|---|---|---|");
     }
+
+    static String choisirSymbole(Scanner in) {
+        while (true) {
+            System.out.print("Choisissez votre symbole (X ou O) : ");
+            String choix = in.next().trim().toUpperCase();
+            if (choix.equals("X") || choix.equals("O")) {
+                return choix;
+            }
+            System.out.println("Choix invalide. Veuillez saisir X ou O.");
+        }
+    }
  
     public static void main(String[] args) {
         String winner = null;
         Scanner in = new Scanner(System.in);
         echiquier = new String[9];
-        symbol = "X";
- 
+
         for (int i = 0; i < 9; i++)
             echiquier[i] = String.valueOf(i + 1);
  
         System.out.println("Bienvenu au morpion.");
+        symbol = choisirSymbole(in);
+
         affichEchiquier();
         System.out.println("Joueur " + symbol + " commence."
             + " Placez " + symbol + " a la case:");

@@ -109,12 +109,21 @@ public class Morpion {
         Scanner in = new Scanner(System.in);
         System.out.println("Bienvenu au morpion.");
 
-        String winner = jouerPartie(in);
+        boolean rejouer;
+        do {
+            String winner = jouerPartie(in);
 
-        if (winner.equals("egalite"))
-            System.out.println("Egalite ! Merci d'avoir joue.");
-        else
-            System.out.println("Bravo a " + winner + ". Merci d'avoir joue.");
+            if (winner.equals("egalite"))
+                System.out.println("Egalite !");
+            else
+                System.out.println("Bravo a " + winner + " !");
+
+            System.out.println("Voulez-vous rejouer ? (o/n)");
+            String reponse = in.nextLine().trim().toLowerCase();
+            rejouer = reponse.equals("o") || reponse.equals("oui");
+        } while (rejouer);
+
+        System.out.println("Merci d'avoir joue. A bientot !");
         in.close();
     }
 }

@@ -10,3 +10,4 @@
 - Jérémie Pennec, JrmPennec, jeremie.pnc@gmail.com
 - Romain Cabaret, RomainCabaret, romainc.cabaret@gmail.com
 - Billy is Back
+- Yasmine BOUMOULA, YasmineBML, yasminebou06@gmail.com

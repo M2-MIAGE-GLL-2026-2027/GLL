@@ -86,9 +86,12 @@ public class Morpion {
             echiquier[i] = String.valueOf(i + 1);
  
         System.out.println("Bienvenu au morpion.");
-        symbol = choisirSymbole(in);
+        String choix = choisirSymbole(in);
+        System.out.println("Vous jouez " + choix + ".");
+        symbol = new Random().nextBoolean() ? "X" : "O";
 
         affichEchiquier();
+        System.out.println("Tirage au sort du joueur qui commence...");
         System.out.println("Joueur " + symbol + " commence."
             + " Placez " + symbol + " a la case:");
  

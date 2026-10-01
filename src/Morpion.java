@@ -69,7 +69,7 @@ public class Morpion {
     static String choisirSymbole(Scanner in) {
         while (true) {
             System.out.print("Choisissez votre symbole (X ou O) : ");
-            String choix = in.next().trim().toUpperCase();
+            String choix = in.nextLine().trim().toUpperCase();
             if (choix.equals("X") || choix.equals("O")) {
                 return choix;
             }

@@ -79,6 +79,7 @@ public class Morpion {
  
     public static void main(String[] args) {
         String winner = null;
+        int nbCoups = 0;
         Scanner in = new Scanner(System.in);
         echiquier = new String[9];
 
@@ -106,6 +107,7 @@ public class Morpion {
 
                 if (echiquier[chiffre - 1].equals(String.valueOf(chiffre))) {
                     echiquier[chiffre - 1] = symbol;
+                    nbCoups++;
                     symbol = symbol.equals("X") ? "O" : "X"; 
                     affichEchiquier();
                     winner = evalGagnant();
@@ -118,9 +120,9 @@ public class Morpion {
         }
        
         if (winner.equals("egalite"))
-            System.out.println("Egalite ! Merci d'avoir joue.");
+            System.out.println("Egalite en " + nbCoups + " coups ! Merci d'avoir joue.");
         else
-            System.out.println("Bravo a " + winner + ". Merci d'avoir joue.");
+            System.out.println("Bravo a " + winner + " ! Victoire en " + nbCoups + " coups.");
       in.close();
     }
 }

@@ -78,6 +78,7 @@ static void affichEchiquier() {
  
     public static void main(String[] args) {
         String winner = null;
+        int nbCoups = 0;
         Scanner in = new Scanner(System.in);
         echiquier = new String[9];
 
@@ -86,6 +87,7 @@ static void affichEchiquier() {
  
         System.out.println("Bienvenu au morpion.");
         symbol = choisirSymbole(in);
+        System.out.println("(Tapez Q pendant votre tour pour abandonner)");
 
         affichEchiquier();
         System.out.println("Joueur " + symbol + " commence."
@@ -94,6 +96,12 @@ static void affichEchiquier() {
         while (winner == null) {
 
             String saisie = in.nextLine().trim();
+            
+            if (saisie.equalsIgnoreCase("Q")) {
+                System.out.println("Le joueur " + symbol + " abandonne la partie.");
+                winner = symbol.equals("X") ? "O" : "X";
+                break;
+            }
 
             try {
                 int chiffre = Integer.parseInt(saisie);
@@ -105,6 +113,7 @@ static void affichEchiquier() {
 
                 if (echiquier[chiffre - 1].equals(String.valueOf(chiffre))) {
                     echiquier[chiffre - 1] = symbol;
+                    nbCoups++;
                     symbol = symbol.equals("X") ? "O" : "X"; 
                     affichEchiquier();
                     winner = evalGagnant();
@@ -117,9 +126,9 @@ static void affichEchiquier() {
         }
        
         if (winner.equals("egalite"))
-            System.out.println("Egalite ! Merci d'avoir joue.");
+            System.out.println("Egalite en " + nbCoups + " coups ! Merci d'avoir joue.");
         else
-            System.out.println("Bravo a " + winner + ". Merci d'avoir joue.");
+            System.out.println("Bravo a " + winner + " ! Victoire en " + nbCoups + " coups.");
       in.close();
     }
 }

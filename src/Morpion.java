@@ -1,4 +1,5 @@
-import java.util.*;
+import java.util.Arrays;
+import java.util.Scanner;
 
 public class Morpion {
    
@@ -53,18 +54,16 @@ public class Morpion {
        | 7 | 8 | 9 |
        |---|---|---|*/
 
-    static void affichEchiquier() {
-        System.out.println("|---|---|---|");
-        System.out.println("| " + echiquier[0] + " | "
-            + echiquier[1] + " | " + echiquier[2] + " |");
-        System.out.println("|-----------|");
-        System.out.println("| " + echiquier[3] + " | "
-		    + echiquier[4] + " | " + echiquier[5] + " |");
-        System.out.println("|-----------|");
-        System.out.println("| " + echiquier[6] + " | "
-		    + echiquier[7] + " | " + echiquier[8] + " |");
-        System.out.println("|---|---|---|");
+static void affichEchiquier() {
+    System.out.println("|---|---|---|");
+    for (int i = 0; i < 9; i += 3) {
+        System.out.println("| " + echiquier[i] + " | " + echiquier[i + 1] + " | " + echiquier[i + 2] + " |");
+        if (i < 6) {
+            System.out.println("|-----------|");
+        }
     }
+    System.out.println("|---|---|---|");
+}
 
     static String choisirSymbole(Scanner in) {
         while (true) {

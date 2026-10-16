@@ -16,3 +16,4 @@
 - Lina Medani, linamedani, medani.lina2004@gmail.com
 - Baptiste BLANCHON, baptiste-bcn, baptisteblanchon91@gmail.com
 - Adam HADJEB, AdamHdjb, adamhdu77127@gmail.com
+- Khadija BOUHENNICHA, kda91, khadija.bouhennicha@gmail.com

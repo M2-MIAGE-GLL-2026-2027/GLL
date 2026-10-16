@@ -13,3 +13,4 @@
 - Leticia Zaid, lettyz3, leticia.zaid.lz@gmail.com
 - Samy Ferhat, samyferhat, ferhatsamy26@gmail.com
 - Mohamed RAHMANI, mohamed-rahmani, mohamed.rahmani.ma@gmail.com
+- Walid Zeggane, zegganewalid, zegganewalid11@gmail.com

@@ -14,3 +14,4 @@
 - Samy Ferhat, samyferhat, ferhatsamy26@gmail.com
 - Mohamed RAHMANI, mohamed-rahmani, mohamed.rahmani.ma@gmail.com
 - Lina Medani, linamedani, medani.lina2004@gmail.com
+- Khadija BOUHENNICHA, kda91, khadija.bouhennicha@gmail.com

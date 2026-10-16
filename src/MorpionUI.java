@@ -25,7 +25,7 @@ public class MorpionUI extends Application {
         for (int i = 0; i < cases.length; i++) {
             Button bouton = new Button();
             bouton.setPrefSize(100, 100);
-            bouton.setStyle("-fx-font-size: 32px;");
+            bouton.setStyle("-fx-font-size: 32px; -fx-opacity: 1;");
             final int position = i;
             bouton.setOnAction(event -> jouer(position));
             cases[i] = bouton;

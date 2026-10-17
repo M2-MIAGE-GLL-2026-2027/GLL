@@ -14,3 +14,4 @@
 - Samy Ferhat, samyferhat, ferhatsamy26@gmail.com
 - Mohamed RAHMANI, mohamed-rahmani, mohamed.rahmani.ma@gmail.com
 - Lina Medani, linamedani, medani.lina2004@gmail.com
+- Baptiste BLANCHON, baptiste-bcn, baptisteblanchon91@gmail.com

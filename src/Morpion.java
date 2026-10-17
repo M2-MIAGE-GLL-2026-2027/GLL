@@ -77,27 +77,27 @@ public class Morpion {
         }
     }
  
-    public static void main(String[] args) {
+    static int nbCoups;
+
+    static String jouerPartie(Scanner in) {
         String winner = null;
-        int nbCoups = 0;
-        Scanner in = new Scanner(System.in);
+        nbCoups = 0;
         echiquier = new String[9];
 
         for (int i = 0; i < 9; i++)
             echiquier[i] = String.valueOf(i + 1);
- 
-        System.out.println("Bienvenu au morpion.");
+
         symbol = choisirSymbole(in);
         System.out.println("(Tapez Q pendant votre tour pour abandonner)");
 
         affichEchiquier();
         System.out.println("Joueur " + symbol + " commence."
             + " Placez " + symbol + " a la case:");
- 
+
         while (winner == null) {
 
             String saisie = in.nextLine().trim();
-            
+
             if (saisie.equalsIgnoreCase("Q")) {
                 System.out.println("Le joueur " + symbol + " abandonne la partie.");
                 winner = symbol.equals("X") ? "O" : "X";
@@ -115,7 +115,7 @@ public class Morpion {
                 if (echiquier[chiffre - 1].equals(String.valueOf(chiffre))) {
                     echiquier[chiffre - 1] = symbol;
                     nbCoups++;
-                    symbol = symbol.equals("X") ? "O" : "X"; 
+                    symbol = symbol.equals("X") ? "O" : "X";
                     affichEchiquier();
                     winner = evalGagnant();
                 }
@@ -125,11 +125,28 @@ public class Morpion {
                 System.out.println("Veuillez entrer un chiffre entre 1 et 9.");
             }
         }
-       
-        if (winner.equals("egalite"))
-            System.out.println("Egalite en " + nbCoups + " coups ! Merci d'avoir joue.");
-        else
-            System.out.println("Bravo a " + winner + " ! Victoire en " + nbCoups + " coups.");
-      in.close();
+        return winner;
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Bienvenu au morpion.");
+
+        boolean rejouer;
+        do {
+            String winner = jouerPartie(in);
+
+            if (winner.equals("egalite"))
+                System.out.println("Egalite en " + nbCoups + " coups !");
+            else
+                System.out.println("Bravo a " + winner + " ! Victoire en " + nbCoups + " coups.");
+
+            System.out.println("Voulez-vous rejouer ? (o/n)");
+            String reponse = in.nextLine().trim().toLowerCase();
+            rejouer = reponse.equals("o") || reponse.equals("oui");
+        } while (rejouer);
+
+        System.out.println("Merci d'avoir joue. A bientot !");
+        in.close();
     }
 }

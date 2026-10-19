@@ -89,10 +89,12 @@ public class Morpion {
     }
  
     static int nbCoups;
+    static boolean abandon;
 
     static String jouerPartie(Scanner in) {
         String winner = null;
         nbCoups = 0;
+        abandon = false;
         echiquier = new String[9];
 
         for (int i = 0; i < 9; i++)
@@ -114,6 +116,7 @@ public class Morpion {
             if (saisie.equalsIgnoreCase("Q")) {
                 System.out.println("Le joueur " + symbol + " abandonne la partie.");
                 winner = symbol.equals("X") ? "O" : "X";
+                abandon = true;
                 break;
             }
 
@@ -151,6 +154,8 @@ public class Morpion {
 
             if (winner.equals("egalite"))
                 System.out.println("Egalite en " + nbCoups + " coups !");
+            else if (abandon)
+                System.out.println("Victoire de " + winner + " par abandon apres " + nbCoups + " coups.");
             else
                 System.out.println("Bravo a " + winner + " ! Victoire en " + nbCoups + " coups.");
 

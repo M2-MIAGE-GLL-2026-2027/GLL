@@ -16,3 +16,5 @@
 - Lina Medani, linamedani, medani.lina2004@gmail.com
 - Baptiste BLANCHON, baptiste-bcn, baptisteblanchon91@gmail.com
 - Adam HADJEB, AdamHdjb, adamhdu77127@gmail.com
+- Verger--Doucy Brice, bgameb, vergerdoucyb0@gmail.com
+

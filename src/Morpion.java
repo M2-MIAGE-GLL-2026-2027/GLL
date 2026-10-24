@@ -1,4 +1,6 @@
-import java.util.*;
+import java.util.Arrays;
+import java.util.Random;
+import java.util.Scanner;
 
 public class Morpion {
    
@@ -159,8 +161,18 @@ public class Morpion {
             else
                 System.out.println("Bravo a " + winner + " ! Victoire en " + nbCoups + " coups.");
 
-            System.out.println("Voulez-vous rejouer ? (o/n)");
-            String reponse = in.nextLine().trim().toLowerCase();
+            String reponse;
+            do {
+                System.out.println("Voulez-vous rejouer ? (o/n)");
+                reponse = in.nextLine().trim().toLowerCase();
+
+                if (!reponse.equals("o") && !reponse.equals("oui")
+                        && !reponse.equals("n") && !reponse.equals("non")) {
+                    System.out.println("Reponse invalide. Entrez o ou n.");
+                }
+            } while (!reponse.equals("o") && !reponse.equals("oui")
+                    && !reponse.equals("n") && !reponse.equals("non"));
+
             rejouer = reponse.equals("o") || reponse.equals("oui");
         } while (rejouer);
 

@@ -71,8 +71,10 @@ public class Morpion {
             System.out.print("Choisir le premier joueur (C) ou tirer au sort (R) ? ");
             String mode = in.nextLine().trim().toUpperCase();
 
-            if (mode.equals("R"))
+            if (mode.equals("R")) {
+                System.out.println("Tirage au sort du joueur qui commence...");
                 return new Random().nextBoolean() ? "X" : "O";
+            }
 
             if (mode.equals("C")) {
                 while (true) {

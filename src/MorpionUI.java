@@ -3,6 +3,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
@@ -11,6 +12,7 @@ import javafx.stage.Stage;
 public class MorpionUI extends Application {
     private final Button[] cases = new Button[9];
     private final Label message = new Label();
+    private final CheckBox modeOrdi = new CheckBox("Jouer contre l'ordinateur");
     private String winner;
 
     @Override
@@ -35,7 +37,7 @@ public class MorpionUI extends Application {
         Button nouvellePartie = new Button("Nouvelle partie");
         nouvellePartie.setOnAction(event -> construirePartie());
 
-        VBox contenu = new VBox(15, message, grille, nouvellePartie);
+        VBox contenu = new VBox(15, message, modeOrdi, grille, nouvellePartie);
         contenu.setAlignment(Pos.CENTER);
         contenu.setPadding(new Insets(20));
 
@@ -70,6 +72,10 @@ public class MorpionUI extends Application {
 
         if (winner == null) {
             message.setText("Tour de " + Morpion.symbol);
+            if (modeOrdi.isSelected() && Morpion.symbol.equals("O")) {
+                int coupOrdi = Morpion.coupOrdinateur() - 1;
+                jouer(coupOrdi);
+            }
         } else if (winner.equals("egalite")) {
             message.setText("Egalite !");
             desactiverCases();

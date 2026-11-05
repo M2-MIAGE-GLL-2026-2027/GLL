@@ -1,11 +1,14 @@
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -37,7 +40,20 @@ public class MorpionUI extends Application {
         Button nouvellePartie = new Button("Nouvelle partie");
         nouvellePartie.setOnAction(event -> construirePartie());
 
-        VBox contenu = new VBox(15, message, modeOrdi, grille, nouvellePartie);
+        // Bouton Quitter : affiche le bilan puis ferme l'application
+        Button quitter = new Button("Quitter");
+        quitter.setOnAction(event -> {
+            afficherBilan();
+            Platform.exit();
+        });
+
+        // Fermeture par la croix de la fenetre : affiche aussi le bilan
+        stage.setOnCloseRequest(event -> afficherBilan());
+
+        HBox boutons = new HBox(10, nouvellePartie, quitter);
+        boutons.setAlignment(Pos.CENTER);
+
+        VBox contenu = new VBox(15, message, modeOrdi, grille, boutons);
         contenu.setAlignment(Pos.CENTER);
         contenu.setPadding(new Insets(20));
 
@@ -49,6 +65,7 @@ public class MorpionUI extends Application {
     private void construirePartie() {
         Morpion.echiquier = new String[9];
         Morpion.symbol = "X";
+        Morpion.nbCoups = 0;
         winner = null;
 
         for (int i = 0; i < Morpion.echiquier.length; i++) {
@@ -66,6 +83,7 @@ public class MorpionUI extends Application {
         Morpion.echiquier[position] = Morpion.symbol;
         cases[position].setText(Morpion.symbol);
         cases[position].setDisable(true);
+        Morpion.nbCoups++;
 
         Morpion.symbol = Morpion.symbol.equals("X") ? "O" : "X";
         winner = Morpion.evalGagnant();
@@ -77,9 +95,11 @@ public class MorpionUI extends Application {
                 jouer(coupOrdi);
             }
         } else if (winner.equals("egalite")) {
+            Morpion.enregistrerPartie(winner);
             message.setText("Egalite !");
             desactiverCases();
         } else {
+            Morpion.enregistrerPartie(winner);
             message.setText("Bravo, " + winner + " a gagne !");
             desactiverCases();
         }
@@ -89,6 +109,15 @@ public class MorpionUI extends Application {
         for (Button bouton : cases) {
             bouton.setDisable(true);
         }
+    }
+
+    // Affiche le bilan de la session dans une fenetre
+    private void afficherBilan() {
+        Alert bilan = new Alert(Alert.AlertType.INFORMATION);
+        bilan.setTitle("Bilan de la session");
+        bilan.setHeaderText("Merci d'avoir joue !");
+        bilan.setContentText(Morpion.texteBilan());
+        bilan.showAndWait();
     }
 
     public static void main(String[] args) {

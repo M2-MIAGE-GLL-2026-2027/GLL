@@ -858,12 +858,11 @@ Ne pas trop réfléchir et éviter de se brider pour sa première contribution !
 
 - https://github.com/explore/ ou https://github.com/search/advanced
 - https://goodfirstissue.dev
-- https://github.com/despo/issuehub.io : language + issue label
 - https://up-for-grabs.net/ : projets avec tâches pour nouveaux contributeurs
 - https://ovio.org/how-it-works : projets/issues selon compétences/intérêts 
 - https://www.codetriage.com/ : mail journalier avec une issue différente
 - https://firstcontributions.github.io/: première contribution en 5 minutes
--  https://codetribute.mozilla.org/ : guide pour premières contributions 
+- https://codetribute.mozilla.org/ : guide pour premières contributions 
 - https://gauger.io/contrib/#/language/javascript
 
 ---

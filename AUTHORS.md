@@ -18,5 +18,7 @@
 - Adam HADJEB, AdamHdjb, adamhdu77127@gmail.com
 - Khadija BOUHENNICHA, kda91, khadija.bouhennicha@gmail.com
 - Walid Zeggane, zegganewalid, zegganewalid11@gmail.com
+- Remy TRUONG, RemyTRUONG91 remytruongrt@gmail.com
+
 - Verger--Doucy Brice, bgameb, vergerdoucyb0@gmail.com
 - Yasmine BOUMOULA, YasmineBML, yasminebou06@gmail.com

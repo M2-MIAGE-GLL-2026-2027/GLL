@@ -103,6 +103,17 @@ public class Morpion {
         }
     }
 
+    static String choisirSymbole(Scanner in) {
+        while (true) {
+            System.out.print("Choisissez votre symbole (X ou O) : ");
+            String choix = in.next().trim().toUpperCase();
+            if (choix.equals("X") || choix.equals("O")) {
+                return choix;
+            }
+            System.out.println("Choix invalide. Veuillez saisir X ou O.");
+        }
+    }
+
     static int coupOrdinateur() {
         List<Integer> casesLibres = new ArrayList<>();
         for (int i = 0; i < 9; i++) {
@@ -130,9 +141,11 @@ public class Morpion {
         symbol = choisirPremierJoueur(in);
         System.out.println("Le joueur " + symbol + " commence.");
         boolean contreOrdi = choisirModeJeu(in);
-        symbol = choisirSymbole(in);
-        String symboleHumain = symbol;
-        String symboleOrdi = symbol.equals("X") ? "O" : "X";
+        String symboleOrdi = null;
+        if (contreOrdi) {
+            String symboleHumain = choisirSymbole(in);
+            symboleOrdi = symboleHumain.equals("X") ? "O" : "X";
+        }
         in.nextLine();
         System.out.println("(Tapez Q pendant votre tour pour abandonner)");
 
@@ -141,15 +154,6 @@ public class Morpion {
             + " Placez " + symbol + " a la case:");
 
         while (winner == null) {
-
-            String saisie = in.nextLine().trim();
-
-            if (saisie.equalsIgnoreCase("Q")) {
-                System.out.println("Le joueur " + symbol + " abandonne la partie.");
-                winner = symbol.equals("X") ? "O" : "X";
-                abandon = true;
-                break;
-            }
             int chiffre;
 
             if (contreOrdi && symbol.equals(symboleOrdi)) {
@@ -157,42 +161,31 @@ public class Morpion {
                 System.out.println("L'ordinateur (" + symbol + ") joue en case " + chiffre);
             } else {
                 String saisie = in.nextLine().trim();
-                
+
                 if (saisie.equalsIgnoreCase("Q")) {
                     System.out.println("Le joueur " + symbol + " abandonne la partie.");
                     winner = symbol.equals("X") ? "O" : "X";
+                    abandon = true;
                     break;
                 }
 
                 try {
                     chiffre = Integer.parseInt(saisie);
-
-                    if(chiffre < 1 || chiffre > 9){
-                        System.out.println("Veuillez entrer un chiffre entre 1 et 9");
-                        continue;
-                    }
                 } catch (NumberFormatException e) {
                     System.out.println("Veuillez entrer un chiffre entre 1 et 9.");
                     continue;
                 }
 
-                if (echiquier[chiffre - 1].equals(String.valueOf(chiffre))) {
-                    echiquier[chiffre - 1] = symbol;
-                    nbCoups++;
-                    symbol = symbol.equals("X") ? "O" : "X";
-                    affichEchiquier();
-                    winner = evalGagnant();
+                if (chiffre < 1 || chiffre > 9) {
+                    System.out.println("Veuillez entrer un chiffre entre 1 et 9.");
+                    continue;
                 }
-                else
-                    System.out.println("Case deja prise, entrez un autre chiffre");
-            } catch (NumberFormatException e) {
-                System.out.println("Veuillez entrer un chiffre entre 1 et 9.");
             }
 
             if (echiquier[chiffre - 1].equals(String.valueOf(chiffre))) {
                 echiquier[chiffre - 1] = symbol;
                 nbCoups++;
-                symbol = symbol.equals("X") ? "O" : "X"; 
+                symbol = symbol.equals("X") ? "O" : "X";
                 affichEchiquier();
                 winner = evalGagnant();
             }

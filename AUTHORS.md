@@ -11,5 +11,14 @@
 - Romain Cabaret, RomainCabaret, romainc.cabaret@gmail.com
 - Mathavan Manicam, ManicamMathavan, mthvnm@gmail.com
 - Melina BELHABIB, MelinaBelh, belhabibmelina@gmail.com
-- Billy is Back
 - Leticia Zaid, lettyz3, leticia.zaid.lz@gmail.com
+- Samy Ferhat, samyferhat, ferhatsamy26@gmail.com
+- Mohamed RAHMANI, mohamed-rahmani, mohamed.rahmani.ma@gmail.com
+- Lina Medani, linamedani, medani.lina2004@gmail.com
+- Baptiste BLANCHON, baptiste-bcn, baptisteblanchon91@gmail.com
+- Adam HADJEB, AdamHdjb, adamhdu77127@gmail.com
+- Khadija BOUHENNICHA, kda91, khadija.bouhennicha@gmail.com
+- Walid Zeggane, zegganewalid, zegganewalid11@gmail.com
+- Verger--Doucy Brice, bgameb, vergerdoucyb0@gmail.com
+- Yasmine BOUMOULA, YasmineBML, yasminebou06@gmail.com
+- Oups

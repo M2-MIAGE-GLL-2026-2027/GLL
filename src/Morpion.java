@@ -105,13 +105,13 @@ public class Morpion {
         }
     }
 
-    // Choix du symbole du joueur humain (mode contre l'ordinateur)
     static String choisirSymbole(Scanner in) {
         while (true) {
-            System.out.print("Quel symbole voulez-vous jouer (X ou O) ? ");
+            System.out.print("Choisissez votre symbole (X ou O) : ");
             String choix = in.next().trim().toUpperCase();
-            if (choix.equals("X") || choix.equals("O"))
+            if (choix.equals("X") || choix.equals("O")) {
                 return choix;
+            }
             System.out.println("Choix invalide. Veuillez saisir X ou O.");
         }
     }
@@ -176,8 +176,11 @@ public class Morpion {
         symbol = choisirPremierJoueur(in);
         System.out.println("Le joueur " + symbol + " commence.");
         boolean contreOrdi = choisirModeJeu(in);
-        String symboleHumain = contreOrdi ? choisirSymbole(in) : symbol;
-        String symboleOrdi = symboleHumain.equals("X") ? "O" : "X";
+        String symboleOrdi = null;
+        if (contreOrdi) {
+            String symboleHumain = choisirSymbole(in);
+            symboleOrdi = symboleHumain.equals("X") ? "O" : "X";
+        }
         in.nextLine();
         System.out.println("(Tapez Q pendant votre tour pour abandonner)");
 
@@ -186,7 +189,6 @@ public class Morpion {
             + " Placez " + symbol + " a la case:");
 
         while (winner == null) {
-
             int chiffre;
 
             if (contreOrdi && symbol.equals(symboleOrdi)) {
@@ -204,12 +206,12 @@ public class Morpion {
 
                 try {
                     chiffre = Integer.parseInt(saisie);
-
-                    if(chiffre < 1 || chiffre > 9){
-                        System.out.println("Veuillez entrer un chiffre entre 1 et 9");
-                        continue;
-                    }
                 } catch (NumberFormatException e) {
+                    System.out.println("Veuillez entrer un chiffre entre 1 et 9.");
+                    continue;
+                }
+
+                if (chiffre < 1 || chiffre > 9) {
                     System.out.println("Veuillez entrer un chiffre entre 1 et 9.");
                     continue;
                 }

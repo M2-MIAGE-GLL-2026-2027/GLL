@@ -20,8 +20,5 @@
 - Walid Zeggane, zegganewalid, zegganewalid11@gmail.com
 - Verger--Doucy Brice, bgameb, vergerdoucyb0@gmail.com
 - Yasmine BOUMOULA, YasmineBML, yasminebou06@gmail.com
-<<<<<<< HEAD
-- Oups
-=======
 - Sabrina TAMMOURET, Sabrina04072003, tammouretsabrina@gmail.com
->>>>>>> 52a1eb0 (Ajout de mon nom dans AUTHORS.md)
+- Remy TRUONG, RemyTRUONG91, remytruongrt@gmail.com

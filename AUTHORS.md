@@ -24,3 +24,4 @@
 - Sabrina TAMMOURET, Sabrina04072003, tammouretsabrina@gmail.com
 - Remy TRUONG, RemyTRUONG91, remytruongrt@gmail.com
 - Mathavan Manicam, ManicamMathavan, mthvnm@gmail.com
+- Nathan BOUZON, Naernis, bouzon.nathan@gmail.com
